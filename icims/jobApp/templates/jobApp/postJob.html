@@ -1,0 +1,85 @@
+{% extends 'jobApp/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/postjob.css' %}">
+
+
+<section>
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        <div class="input-group mb-3">
+            <div class="input-group-append">
+                <span class="input-group-text">{{empForm.company.label}}</span>
+            </div>
+            {{empForm.company}}
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-append">
+                <span class="input-group-text">{{empForm.job_title.label}}</span>
+            </div>
+            {{empForm.job_title}}
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-append">
+                <span class="input-group-text">{{empForm.job_type.label}}</span>
+            </div>
+            {{empForm.job_type}}
+        </div>
+        <div class="input-group mb-2">
+            <div class="input-group-append">
+                <span class="input-group-text">{{empForm.salary.label}}</span>
+            </div>
+            {{empForm.salary}}
+        </div>
+        <div class="input-group mb-2">
+            <div class="input-group-append">
+                <span class="input-group-text">{{empForm.description.label}}</span>
+            </div>
+            {{empForm.description}}
+        </div>
+        <div class="input-group mb-2">
+            <div class="input-group-append">
+                <span class="input-group-text">{{empForm.required_skills.label}}</span>
+            </div>
+            {{empForm.required_skills}}
+        </div>
+        <div class="input-group mb-2">
+            <div class="input-group-append">
+                <span class="input-group-text">{{empForm.state.label}}</span>
+            </div>
+            {{empForm.state}}
+        </div>
+        <div class="input-group mb-2">
+            <div class="input-group-append">
+                <span class="input-group-text">{{empForm.city.label}}</span>
+            </div>
+            {{empForm.city}}
+        </div>
+        <div class="input-group mb-2">
+            <div class="input-group-append">
+                <span class="input-group-text">{{empForm.years_of_experience.label}}</span>
+            </div>
+            {{empForm.years_of_experience}}
+        </div>
+        <div class="input-group mb-2">
+            <div class="input-group-append">
+                <span class="input-group-text">{{empForm.schedule.label}}</span>
+            </div>
+            {{empForm.schedule}}
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-append">
+                <span class="input-group-text">{{empForm.benefits.label}}</span>
+            </div>
+            {{empForm.benefits}}
+        </div>
+
+<!--    {{empForm.as_p}}-->
+    <input class="btn btn-primary" type="submit" value="Post Job ">
+    <a class="btn btn-danger" href="{% url 'company' %}">Cancel</a>
+</form>
+
+</section>
+
+{% endblock %}

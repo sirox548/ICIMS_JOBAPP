@@ -1,0 +1,47 @@
+{% extends 'jobApp/base.html' %}
+{% load static %}
+{% block title %}Login {% endblock title %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+<!--<section>-->
+<!--    <form class="row g-3">-->
+<!--        {% csrf_token %}-->
+<!--        {% for item in profileForm %}-->
+<!--        <div class="col-md-6">-->
+<!--            <label>{{item.label}}</label>-->
+<!--            <p>{{item}}</p>-->
+<!--            {% endfor %}-->
+<!--        </div>-->
+
+
+<!--  <div class="col-12">-->
+<!--    <input class="btn btn-primary" type="submit" value="save changes">-->
+<!--    <a class="btn btn-danger" href="{% url 'account' %}">Cancel</a>-->
+<!--  </div>-->
+<!--</form>-->
+
+<!--</section>-->
+<section class="content-wrap2">
+    <h2>Update Profile Information</h2>
+        <form class="container">
+            {% csrf_token %}
+            {% for item in profileForm %}
+            <div class="input-group">
+                <label class="input-group-text">{{item.label}}</label>
+                <p class="form-control">{{item}}</p>
+                {% endfor %}
+            </div>
+
+            <input class="btn btn-primary" type="submit" value="save changes">
+            <div><span><a class="btn btn-danger" href="{% url 'account' %}">Cancel</a></span></div>
+        </form>
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+
+</section>
+
+
+
+{% endblock content %}

@@ -1,6 +1,25 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+<style>
+  .greetings {
+    font-size: 18px;
+    color: #FF0000;
+    margin-right: 20px
+  }
+  .navbar .navbar-nav .nav-link{
+  color: #DC143C;
+
+  }
+  .navbar {
+  color: #FFFFFF;
+
+  }
+
+
+</style>
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-lg bg-lg">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'home' %}">{% block title%} ICIMS HOME {% endblock title %}</a>
+    <img src="{% static 'images/icimslogo.png'  %}" height=50>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,17 +28,20 @@
         <li class="nav-item">
           <a class="nav-link" href="{% url 'home' %}">Home</a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="{% url 'company'%}">Admin</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'register' %}">Register Today!</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'login' %}">Login</a>
-        </li>
-      </ul>
 
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'account'%}">account</a>
+        </li>
+
+      </ul>
     </div>
+    <span class="greetings">Hello,{{ request.user}} </span>
+    <span ><a class="greetings" href="{% url 'logout' %}">Logout</a> </span>
   </div>
 </nav>
+
+

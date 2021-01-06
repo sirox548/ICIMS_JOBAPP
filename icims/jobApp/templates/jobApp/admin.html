@@ -2,10 +2,81 @@
 {% load static %}
 {% block content %}
 
-<h1>Admin</h1>
 
 
+<!--<section>-->
+<!--    <form method="POST" action="">-->
+<!--        {% csrf_token %}-->
+<!--    {{empForm.as_p}}-->
+<!--    <input class="btn btn-primary" type="submit" value="Post Job ">-->
+<!--    <a class="btn btn-danger" href="{% url 'company' %}">Cancel</a>-->
+<!--</form>-->
 
+<!--</section>-->
+<p>Dashboard </p>
+<br>
+
+<div class="row">
+	<div class="col-md-5">
+		<h5>Candidates</h5>
+		<hr>
+		<div class="card card-body">
+			<a class="btn btn-primary  btn-sm btn-block" href="">View candidate</a>
+			<table class="table table-sm">
+				<tr>
+					<th></th>
+					<th>Candidate Name</th>
+					<th>Phone</th>
+                    <th>Interview status</th>
+				</tr>
+
+
+					<tr>
+						<td><a href="#">View</a></td>
+
+					<tr>
+
+
+			</table>
+		</div>
+	</div>
+
+	<div class="col-md-7">
+		<h5>Job Postings for the Last Quarter</h5>
+		<hr>
+		<div class="card card-body">
+			<table class="table table-sm">
+				<tr>
+					<th>Job Title</th>
+					<th>Posted Date</th>
+					<th>Application Status</th>
+					<th>Update</th>
+					<th>Delete</th>
+				</tr>
+<!--				{% for order in orders %}-->
+
+					<tr>
+<!--						<td>{{order.product}}</td>-->
+<!--						<td>{{order.date_created}}</td>-->
+<!--						<td>{{order.status}}</td>-->
+						<td><a class="btn btn-sm btn-info" href="#">Update</a></td>
+						<td><a class="btn btn-sm btn-danger" href="#">Delete</a></td>
+					<tr>
+<!--				{% endfor %}-->
+
+			</table>
+		</div>
+	</div>
+
+</div>
+<br><br>
+<section>
+<div class="views">
+    <a class="btn btn-primary" href="{% url 'postjob' %}" >Post new Job</a>
+    <input class="btn btn-secondary" type="submit" value="View Jobs">
+
+</div>
+</section>
 
 
 {% endblock content %}
